@@ -1,1 +1,11 @@
-Hello
+<div *ngIf="!isLoggedIn()">
+    <router-outlet></router-outlet>
+</div>
+<div *ngIf="isLoggedIn()" style="height: 100%;">
+    <app-toolbar (isMenuButtonClicked) = "menuButtonClicked()">Toolbar</app-toolbar>
+    <app-sidebar [sidebarOpened] = "sidebarOpened">
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </app-sidebar>
+</div>

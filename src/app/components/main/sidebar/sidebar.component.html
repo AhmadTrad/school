@@ -1,0 +1,49 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" [opened]="sidebarOpened" style="width: 250px;">
+        <mat-nav-list>
+            <mat-list-item class="center-flex" routerLink="dashboard" >
+                <mat-icon>dashboard</mat-icon><span>Dashboard</span>
+            </mat-list-item>
+
+            <mat-accordion>
+
+            <mat-expansion-panel [class.mat-elevation-z0]="true">
+                <mat-expansion-panel-header>
+                    Person
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="person">
+                        <mat-icon>user</mat-icon><span>Add Person</span>
+                    </a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [class.mat-elevation-z0]="true">
+                <mat-expansion-panel-header>
+                    Customers
+                </mat-expansion-panel-header>
+                <mat-nav-list>
+                    <a mat-list-item routerLink="ios">
+                        <mat-icon>apple</mat-icon><span>Manage Categories</span>
+                    </a>
+                    <a mat-list-item routerLink="android">
+                        <mat-icon>android</mat-icon><span>Manage Products</span>
+                    </a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        </mat-nav-list>
+
+
+
+    </mat-drawer>
+    
+
+    <mat-drawer-content>
+        <div class="container-fluid" style="height: 100% !important; padding-top: 12px;">
+            <ng-content></ng-content>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+  
